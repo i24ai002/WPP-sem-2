@@ -1,28 +1,25 @@
-list0=[]
-list1=[]
-list2=[]
-list3=[]
-list4=[]
+list = [i for i in range(1, 10001)]
 
-for i in range(1,10001):
-    rem=i%5
-    if rem==0:
-        list0.append(i)
-    if rem==1:
-        list1.append(i)
-    if rem==2:
-        list2.append(i)
-    if rem==3:
-        list3.append(i)
-    if rem==4:
-        list4.append(i)
-ltotal=list0+list1+list2+list3+list4
-ltotal.sort()
-compare=[]
+list0 = [i for i in range(1, 10001) if i % 5 == 0]
+list1 = [i for i in range(1, 10001) if i % 5 == 1]
+list2 = [i for i in range(1, 10001) if i % 5 == 2]
+list3 = [i for i in range(1, 10001) if i % 5 == 3]
+list4 = [i for i in range(1, 10001) if i % 5 == 4]
 
-for i in range(1,10001):
-    compare.append(i)
-if ltotal==compare:
-    print("EQUIVALENCE RELATION IS VALID")
+print(list0)
+print(list1)
+print(list2)
+print(list3)
+print(list4)
+
+new_list = []
+new_list.extend(list0)
+new_list.extend(list1)
+new_list.extend(list2)
+new_list.extend(list3)
+new_list.extend(list4)
+
+if set(new_list) == set(list):
+    print("True")
 else:
-    print("EQUIVALENCE RELATION IS NOT VALID")
+    print("False")
